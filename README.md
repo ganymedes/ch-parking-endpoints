@@ -49,16 +49,16 @@ Returns a `<parkdata>` root with a feed timestamp and one `<parking>` element pe
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<parkdata updated="11.05.2026 01:24:30">
+<parkdata updated="11.05.2026 01:31:30">
   <parking name="P01"  state="1" spacecount="598" spacefree="494" open="00:00" close="00:00"/>
   <parking name="P02"  state="1" spacecount="425" spacefree="353" open="00:00" close="00:00"/>
-  <parking name="P+R"  state="1" spacecount="600" spacefree="518" open="00:00" close="00:00"/>
+  <parking name="P+R"  state="1" spacecount="600" spacefree="517" open="00:00" close="00:00"/>
   <parking name="P09"  state="1" spacecount="-1"  spacefree="0"   open="00:00" close="00:00"/>
   <!-- … 8 more entries -->
 </parkdata>
 ```
 
-Note `spacecount="-1"` for P09 — sentinel for closed / unknown. Values change in real time.
+Note `spacecount="-1"` for P09 — this is the real value published by the feed, used as a sentinel when a parking isn't reporting (P09 is an outdoor lot without entry-barrier counting). Values change in real time.
 
 ## 🤝 Contributing
 
