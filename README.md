@@ -2,7 +2,7 @@
 
 > A public catalog of parking availability endpoints, feeds, and data sources discovered on public Swiss websites.
 
-🇨🇭 **Scope:** Switzerland  ·  📦 **Sources:** 3  ·  🅿️ **Parkings:** 30  ·  🔌 **Endpoints:** 3
+🇨🇭 **Scope:** Switzerland  ·  📦 **Sources:** 4  ·  🅿️ **Parkings:** 66  ·  🔌 **Endpoints:** 7
 
 ---
 
@@ -20,6 +20,7 @@ Each source describes **one operator** and lives in [`sources/`](sources/) as a 
 | [`ch-thun-parkhausthun.json`](sources/ch-thun-parkhausthun.json) | Parkhaus Thun AG | 📍 Thun (BE) | 4 | 1 (undocumented JSON) |
 | [`ch-bern-parkingbern.json`](sources/ch-bern-parkingbern.json) | Parking Bern (aggregator) | 📍 Bern (BE) | 10 | 1 (undocumented XML) |
 | [`ch-luzern-plsluzern.json`](sources/ch-luzern-plsluzern.json) | PLS Parkleitsystem Luzern AG (aggregator) | 📍 Luzern (LU) | 16 | 1 (undocumented JSON, CORS-enabled) |
+| [`ch-zuerich-plszh.json`](sources/ch-zuerich-plszh.json) | Stadt Zürich Parkleitsystem (official) | 📍 Zürich (ZH) | 36 | 4 (1 CC0 RSS + 3 secondary) |
 
 ## 🧪 Try it
 
@@ -60,6 +61,34 @@ Returns a `<parkdata>` root with a feed timestamp and one `<parking>` element pe
 ```
 
 Note `spacecount="-1"` for P09 — this is the real value published by the feed, used as a sentinel when a parking isn't reporting (P09 is an outdoor lot without entry-barrier counting). Values change in real time.
+
+### Zürich — RSS (CC0, Open Data)
+
+```bash
+curl -s https://www.pls-zh.ch/plsFeed/rss | xmllint --format -
+```
+
+The official feed published as Open Data by the City of Zürich, [CC0-licensed](https://data.stadt-zuerich.ch/dataset/parkleitsystem). Each `<item>` is one parking; live free spaces are inside `<description>` as `<state> /  <free>`:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>FEED Parkleitsystem Stadt Zürich</title>
+    <copyright>CC-0 License</copyright>
+    <item>
+      <title>Parkhaus Accu / Otto-Schütz-Weg</title>
+      <description>open /  156</description>
+      <link>https://www.pls-zh.ch/parkhaus/accu.jsp?pid=accu</link>
+      <pubDate>Sun, 10 May 2026 22:33:20 GMT</pubDate>
+      <dc:date>2026-05-10T22:33:20Z</dc:date>
+    </item>
+    <!-- … 35 more items -->
+  </channel>
+</rss>
+```
+
+The RSS feed itself only has free spaces — capacity, addresses and coordinates come from three secondary endpoints documented in the source file (ParkenDD JSON mirror with CORS, WordPress REST metadata, and an internal `api.php`).
 
 ## 🤝 Contributing
 
