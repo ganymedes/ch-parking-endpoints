@@ -22,7 +22,7 @@ Each source describes **one operator** and lives in [`sources/`](sources/) as a 
 
 ## 🧪 Try it
 
-The Thun endpoint, for example:
+### Thun — JSON
 
 ```bash
 curl -s https://www.parkhausthun.ch/update-carparks.php | jq
@@ -39,7 +39,26 @@ Returns an object keyed by parking identifier — `free`, `obstructed`, and `cap
 }
 ```
 
-Values change in real time.
+### Bern — XML
+
+```bash
+curl -s https://www.parking-bern.ch/parkdata.xml | xmllint --format -
+```
+
+Returns a `<parkdata>` root with a feed timestamp and one `<parking>` element per garage — all data lives in attributes:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<parkdata updated="11.05.2026 01:24:30">
+  <parking name="P01"  state="1" spacecount="598" spacefree="494" open="00:00" close="00:00"/>
+  <parking name="P02"  state="1" spacecount="425" spacefree="353" open="00:00" close="00:00"/>
+  <parking name="P+R"  state="1" spacecount="600" spacefree="518" open="00:00" close="00:00"/>
+  <parking name="P09"  state="1" spacecount="-1"  spacefree="0"   open="00:00" close="00:00"/>
+  <!-- … 8 more entries -->
+</parkdata>
+```
+
+Note `spacecount="-1"` for P09 — sentinel for closed / unknown. Values change in real time.
 
 ## 🤝 Contributing
 
