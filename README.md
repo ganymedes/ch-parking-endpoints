@@ -2,7 +2,7 @@
 
 > A public catalog of parking availability endpoints, feeds, and data sources discovered on public Swiss websites.
 
-🇨🇭 **Scope:** Switzerland  ·  📦 **Sources:** 2  ·  🅿️ **Parkings:** 14  ·  🔌 **Endpoints:** 2
+🇨🇭 **Scope:** Switzerland  ·  📦 **Sources:** 3  ·  🅿️ **Parkings:** 30  ·  🔌 **Endpoints:** 3
 
 ---
 
@@ -19,6 +19,7 @@ Each source describes **one operator** and lives in [`sources/`](sources/) as a 
 | --- | --- | --- | --- | --- |
 | [`ch-thun-parkhausthun.json`](sources/ch-thun-parkhausthun.json) | Parkhaus Thun AG | 📍 Thun (BE) | 4 | 1 (undocumented JSON) |
 | [`ch-bern-parkingbern.json`](sources/ch-bern-parkingbern.json) | Parking Bern (aggregator) | 📍 Bern (BE) | 10 | 1 (undocumented XML) |
+| [`ch-luzern-plsluzern.json`](sources/ch-luzern-plsluzern.json) | PLS Parkleitsystem Luzern AG (aggregator) | 📍 Luzern (LU) | 16 | 1 (undocumented JSON, CORS-enabled) |
 
 ## 🧪 Try it
 

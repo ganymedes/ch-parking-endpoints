@@ -1,0 +1,160 @@
+{
+  "id": "ch-luzern-plsluzern",
+  "operator": "PLS Parkleitsystem Luzern AG (city-wide aggregator covering multiple operators)",
+  "country": "CH",
+  "canton": "LU",
+  "city": "Luzern",
+  "website": "https://www.pls-luzern.ch",
+  "endpoints": [
+    {
+      "url": "https://info.pls-luzern.ch/TeqParkingWS/GetFreeParks",
+      "method": "GET",
+      "format": "json",
+      "auth": "none",
+      "documented": false,
+      "cors": "Access-Control-Allow-Origin: * — usable directly from browser / frontend code",
+      "discovered_on": "https://www.pls-luzern.ch",
+      "response_shape": "{ status, data: { parkings: { <id>: { description, vacancy, capacity, datestamp, maintenance, opened } }, groups: { north|south|messe: { description, vacancy, capacity } }, time } }",
+      "fields": {
+        "status": "request status string, e.g. \"success\"",
+        "data.parkings": "object keyed by parking ID. Each entry has: description (string), vacancy (int, free spaces), capacity (int, total spaces), datestamp (ISO 8601 per-parking, with timezone offset), maintenance (boolean), opened (boolean)",
+        "data.groups": "object keyed by group (north / south / messe). Each has description, vacancy, capacity — aggregated counts across the parkings in that group",
+        "data.time": "ISO 8601 timestamp of the overall feed snapshot"
+      },
+      "notes": "Frontend-facing endpoint — not an officially documented public API. The first 7 parkings below are publicly displayed on pls-luzern.ch; the remaining 9 are present in the feed only. SP05 covers Bahnhofparking P1 and P2 combined — the website splits them visually using a fixed ~85% / ~15% JavaScript estimate, but the endpoint itself returns only the combined SP05 value. Capacities and max heights below are sourced from third-party listing sites (parking-luzern.ch, zentralplus.ch, etc.) since pls-luzern.ch is JS-rendered."
+    }
+  ],
+  "parkings": [
+    {
+      "id": "SP02",
+      "name": "Parkhaus Altstadt",
+      "address": "Baselstrasse 4, 6003 Luzern",
+      "capacity": 456,
+      "max_height_m": 1.90,
+      "info_url": "https://www.parking-luzern.ch/de/Parkhaeuser/Altstadt"
+    },
+    {
+      "id": "SP01",
+      "name": "Parkhaus Am Gütsch",
+      "address": "Baselstrasse 61A, 6003 Luzern",
+      "capacity": 215,
+      "max_height_m": null,
+      "info_url": "https://www.parking-luzern.ch/de/Parkhaeuser/Am-Guetsch"
+    },
+    {
+      "id": "SP05",
+      "name": "Bahnhofparking P1+P2",
+      "address": "Bahnhofplatz 1, 6002 Luzern",
+      "capacity": null,
+      "max_height_m": null,
+      "info_url": "https://www.parking-luzern.ch/en/parkings/Bahnhofparking-P1",
+      "notes": "Single feed entry covers P1 and P2 combined. The pls-luzern.ch website splits these client-side using a fixed ~85% / ~15% JavaScript estimate; the endpoint itself does not."
+    },
+    {
+      "id": "SP06",
+      "name": "Bahnhofparking P3",
+      "address": "Robert-Zünd-Strasse, 6002 Luzern",
+      "capacity": 447,
+      "max_height_m": null,
+      "info_url": null
+    },
+    {
+      "id": "NP08",
+      "name": "Parkhaus Casino-Palace",
+      "address": "Haldenstrasse 6, 6006 Luzern",
+      "capacity": 250,
+      "max_height_m": null,
+      "info_url": "https://www.parking-luzern.ch/en/parkings/Casino-Palace"
+    },
+    {
+      "id": "NP11",
+      "name": "City-Parking",
+      "address": "Zürichstrasse 35, 6004 Luzern",
+      "capacity": 455,
+      "max_height_m": 2.00,
+      "info_url": "https://www.parking-luzern.ch/en/parkings/City-Parking"
+    },
+    {
+      "id": "NP07",
+      "name": "Parkhaus Schweizerhof",
+      "address": "Schweizerhofquai 3, 6002 Luzern",
+      "capacity": 253,
+      "max_height_m": null,
+      "info_url": "https://www.parking-luzern.ch/en/parkings/Schweizerhof"
+    },
+    {
+      "id": "AP01",
+      "name": "Parkhaus Sportgebäude",
+      "address": "Zihlmattweg 46, 6005 Luzern",
+      "capacity": null,
+      "max_height_m": 1.95,
+      "info_url": null
+    },
+    {
+      "id": "AP02",
+      "name": "Parkplatz Sportgebäude",
+      "address": "Zihlmattweg 46, 6005 Luzern",
+      "capacity": 97,
+      "max_height_m": null,
+      "info_url": null,
+      "notes": "Outdoor lot adjacent to AP01 (Parkhaus Sportgebäude) on the Allmend; capacity figure is from the live feed."
+    },
+    {
+      "id": "AP04",
+      "name": "Parkplatz Allmend/Messe P2",
+      "address": "Horwerstrasse, 6005 Luzern",
+      "capacity": null,
+      "max_height_m": null,
+      "info_url": null,
+      "notes": "Outdoor lot. Feed has been reporting capacity=0 / vacancy=0; likely only active during Messe Luzern events."
+    },
+    {
+      "id": "PKF",
+      "name": "Parkhaus Flora",
+      "address": "Seidenhofstrasse 6, 6003 Luzern",
+      "capacity": 65,
+      "max_height_m": null,
+      "info_url": null
+    },
+    {
+      "id": "NP12",
+      "name": "Parkhaus Löwencenter",
+      "address": "Zürichstrasse 5–11, 6004 Luzern",
+      "capacity": 355,
+      "max_height_m": null,
+      "info_url": "https://www.loewencenter.ch/parking"
+    },
+    {
+      "id": "SP04",
+      "name": "Parkhaus Kantonalbank",
+      "address": "Hirschmattstrasse 7, 6003 Luzern",
+      "capacity": 264,
+      "max_height_m": 2.00,
+      "info_url": null
+    },
+    {
+      "id": "SP03",
+      "name": "Parkhaus Kesselturm",
+      "address": "Burgerstrasse 20, 6003 Luzern",
+      "capacity": 350,
+      "max_height_m": null,
+      "info_url": null
+    },
+    {
+      "id": "NP13",
+      "name": "Parkhaus Nationalhof",
+      "address": "Haldenstrasse 23A, 6006 Luzern",
+      "capacity": 300,
+      "max_height_m": null,
+      "info_url": null
+    },
+    {
+      "id": "SP09",
+      "name": "Parkhaus Hirzenmatt",
+      "address": "Winkelriedstrasse 36, 6003 Luzern",
+      "capacity": null,
+      "max_height_m": null,
+      "info_url": null
+    }
+  ]
+}
