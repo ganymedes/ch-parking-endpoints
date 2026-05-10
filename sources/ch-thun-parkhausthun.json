@@ -1,0 +1,60 @@
+{
+  "id": "ch-thun-parkhausthun",
+  "operator": "Parkhaus Thun AG",
+  "country": "CH",
+  "canton": "BE",
+  "city": "Thun",
+  "website": "https://www.parkhausthun.ch",
+  "endpoints": [
+    {
+      "url": "https://www.parkhausthun.ch/update-carparks.php",
+      "method": "GET",
+      "format": "json",
+      "auth": "none",
+      "documented": false,
+      "discovered_on": "https://www.parkhausthun.ch",
+      "response_shape": "object keyed by parking identifier",
+      "fields": {
+        "identifier": "short code matching the parking id",
+        "free": "free spaces (zero-padded string, e.g. \"441\")",
+        "obstructed": "obstructed / closed spaces (zero-padded string)",
+        "capacity": "currently usable total capacity (zero-padded string; may be lower than the structural capacity when levels are out of service)"
+      },
+      "notes": "Numeric values are returned as zero-padded strings. The endpoint's \"capacity\" can be lower than the parking's structural capacity."
+    }
+  ],
+  "parkings": [
+    {
+      "id": "CityNord",
+      "name": "Parkhaus City Nord Grabengut",
+      "address": "Grabenstrasse 6, 3600 Thun",
+      "capacity": 575,
+      "max_height_m": 1.95,
+      "info_url": "https://www.parkhausthun.ch/de/city-nord-grabengut.html"
+    },
+    {
+      "id": "CityOst",
+      "name": "Parkhaus City Ost Schlossberg",
+      "address": "Burgstrasse 17, 3600 Thun",
+      "capacity": 310,
+      "max_height_m": 2.20,
+      "info_url": "https://www.parkhausthun.ch/de/city-ost-schlossberg.html"
+    },
+    {
+      "id": "CitySued",
+      "name": "Parkhaus City Süd Bahnhof",
+      "address": "Mönchstrasse 4, 3600 Thun",
+      "capacity": 90,
+      "max_height_m": 2.20,
+      "info_url": "https://www.parkhausthun.ch/de/city-sued-bahnhof.html"
+    },
+    {
+      "id": "CityWest",
+      "name": "Parkhaus City West Aarestrasse",
+      "address": "Aarestrasse 14, 3600 Thun",
+      "capacity": 630,
+      "max_height_m": 1.95,
+      "info_url": "https://www.parkhausthun.ch/de/city-west-aarestrasse.html"
+    }
+  ]
+}
