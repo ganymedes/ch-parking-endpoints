@@ -1,0 +1,112 @@
+{
+  "id": "ch-bern-parkingbern",
+  "operator": "Parking Bern (city-wide aggregator covering multiple operators)",
+  "country": "CH",
+  "canton": "BE",
+  "city": "Bern",
+  "website": "https://www.parking-bern.ch",
+  "endpoints": [
+    {
+      "url": "https://www.parking-bern.ch/parkdata.xml",
+      "method": "GET",
+      "format": "xml",
+      "auth": "none",
+      "documented": false,
+      "discovered_on": "https://www.parking-bern.ch",
+      "response_shape": "<parkdata updated=\"DD.MM.YYYY HH:MM:SS\"> containing <parking ... /> entries; each entry's data is in attributes",
+      "fields": {
+        "updated": "feed timestamp on the root <parkdata> element, format \"DD.MM.YYYY HH:MM:SS\" (Europe/Zurich)",
+        "name": "parking identifier — usually the code (e.g. \"P01\", \"P+R\"), but a few entries use the long name instead (e.g. \"Kurzparking Bahnhof\", \"City West Parking Mu\")",
+        "state": "status flag; \"1\" = open / reporting",
+        "spacecount": "currently usable total capacity (may be lower than structural capacity; \"-1\" indicates closed / unknown)",
+        "spacefree": "free spaces",
+        "open": "opening time \"HH:MM\"; \"00:00\" together with close=\"00:00\" indicates 24h or unspecified",
+        "close": "closing time \"HH:MM\"; see open"
+      },
+      "notes": "The feed currently returns 12 entries; this catalog lists the 10 numbered parkings. The two extras (\"Kurzparking Bahnhof\", \"City West Parking Mu\") are sub-facilities of P01 and P04 respectively. Identifier inconsistency: most entries are coded (P01–P10, P+R) but two use long names."
+    }
+  ],
+  "parkings": [
+    {
+      "id": "P01",
+      "name": "Bahnhof Parking",
+      "address": "Parkterrasse 14, 3012 Bern",
+      "capacity": 598,
+      "max_height_m": 2.10,
+      "info_url": "https://www.bahnhofparking.ch"
+    },
+    {
+      "id": "P02",
+      "name": "Metro Parking",
+      "address": "Schüttestrasse, 3006 Bern",
+      "capacity": 425,
+      "max_height_m": 2.20,
+      "info_url": "https://www.metro-parking.ch"
+    },
+    {
+      "id": "P03",
+      "name": "Rathaus Parking",
+      "address": "Postgasshalde 50, 3011 Bern",
+      "capacity": 570,
+      "max_height_m": 1.95,
+      "info_url": "https://www.parking.amag.ch"
+    },
+    {
+      "id": "P04",
+      "name": "Parking City West",
+      "address": "Effingerstrasse 20, 3008 Bern",
+      "capacity": 430,
+      "max_height_m": 2.10,
+      "info_url": "https://www.belwag.ch"
+    },
+    {
+      "id": "P05",
+      "name": "Mobiliar Parking",
+      "address": "Sulgeneckstrasse 18, 3007 Bern",
+      "capacity": 90,
+      "max_height_m": 2.10,
+      "info_url": "https://www.mobi.ch"
+    },
+    {
+      "id": "P06",
+      "name": "Casinoparking",
+      "address": "Kochergasse 1, 3011 Bern",
+      "capacity": 448,
+      "max_height_m": 2.50,
+      "info_url": "https://www.belwag.ch"
+    },
+    {
+      "id": "P08",
+      "name": "expo Parking",
+      "address": "Bolligenstrasse 61, 3006 Bern",
+      "capacity": 720,
+      "max_height_m": 2.10,
+      "info_url": "https://www.bernexpo.ch/parking"
+    },
+    {
+      "id": "P09",
+      "name": "Parkplatz BERNEXPO",
+      "address": null,
+      "capacity": null,
+      "max_height_m": null,
+      "info_url": "https://www.bernexpo.ch/parking",
+      "notes": "Not listed on the parking-bern.ch homepage; address and capacity unavailable. The XML feed reports spacecount=\"-1\" (closed / unknown sentinel)."
+    },
+    {
+      "id": "P10",
+      "name": "Kursaal Parking",
+      "address": "Kornhausstrasse 3, 3013 Bern",
+      "capacity": 240,
+      "max_height_m": 2.00,
+      "info_url": "https://kursaal-bern.ch"
+    },
+    {
+      "id": "P+R",
+      "name": "Park + Ride Neufeld",
+      "address": "Neubrückstrasse 166, 3012 Bern",
+      "capacity": 600,
+      "max_height_m": 2.25,
+      "info_url": null
+    }
+  ]
+}
