@@ -1,20 +1,49 @@
-# ch-parking-endpoints
+# 🚗 ch-parking-endpoints
 
-A public catalog of parking availability endpoints, feeds, and data sources discovered on public websites — focused on Switzerland.
+> A public catalog of parking availability endpoints, feeds, and data sources discovered on public Swiss websites.
 
-## Structure
+🇨🇭 **Scope:** Switzerland  ·  📦 **Sources:** 1  ·  🅿️ **Parkings:** 4  ·  🔌 **Endpoints:** 1
 
-Each source lives in [`sources/`](sources/) as a single JSON file named `ch-<city>-<operator>.json`. A source describes one operator and contains:
+---
 
-- one or more **endpoints** — live data feeds (URL, HTTP method, response format, auth, response shape, whether the endpoint is officially documented)
-- the **parkings** the endpoints cover — name, address, structural capacity, max vehicle height, info URL
+## 📚 What's inside
 
-## Sources
+Each source describes **one operator** and lives in [`sources/`](sources/) as a single JSON file named `ch-<city>-<operator>.json`.
+
+- 🔌 **Endpoints** — live data feeds (URL, method, format, auth, response shape, documented flag)
+- 🅿️ **Parkings** — the garages those endpoints cover (name, address, capacity, max height, info URL)
+
+## 🗺️ Sources
 
 | File | Operator | City | Parkings | Endpoints |
 | --- | --- | --- | --- | --- |
-| [`ch-thun-parkhausthun.json`](sources/ch-thun-parkhausthun.json) | Parkhaus Thun AG | Thun (BE) | 4 | 1 (undocumented JSON) |
+| [`ch-thun-parkhausthun.json`](sources/ch-thun-parkhausthun.json) | Parkhaus Thun AG | 📍 Thun (BE) | 4 | 1 (undocumented JSON) |
 
-## License
+## 🧪 Try it
 
-MIT — see [LICENSE](LICENSE). All sources listed here were discovered on publicly accessible websites.
+The Thun endpoint, for example:
+
+```bash
+curl -s https://www.parkhausthun.ch/update-carparks.php | jq
+```
+
+Returns an object keyed by parking identifier — `free`, `obstructed`, and `capacity` are zero-padded strings:
+
+```json
+{
+  "CityNord": { "identifier": "CityNord", "free": "441", "obstructed": "134", "capacity": "575" },
+  "CityOst":  { "identifier": "CityOst",  "free": "116", "obstructed": "187", "capacity": "303" },
+  "CitySued": { "identifier": "CitySued", "free": "055", "obstructed": "030", "capacity": "085" },
+  "CityWest": { "identifier": "CityWest", "free": "402", "obstructed": "153", "capacity": "555" }
+}
+```
+
+Values change in real time.
+
+## 🤝 Contributing
+
+Found a new public endpoint? Open a PR adding a file under [`sources/`](sources/) that matches the existing shape. Please only catalog sources discovered on publicly accessible websites, and be considerate with request rates when probing endpoints.
+
+## 📜 License
+
+MIT — see [LICENSE](LICENSE).
