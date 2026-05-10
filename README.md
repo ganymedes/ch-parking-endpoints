@@ -44,6 +44,15 @@ Values change in real time.
 
 Found a new public endpoint? Open a PR adding a file under [`sources/`](sources/) that matches the existing shape. Please only catalog sources discovered on publicly accessible websites, and be considerate with request rates when probing endpoints.
 
+## ⚠️ Disclaimer
+
+This repo is a collection of parking endpoints I've stumbled across on public websites. **No guarantees whatsoever, for either the code or the endpoints.**
+
+- 🪦 Endpoints may break, change, move, or vanish at any time — they are not contracts.
+- 🐛 The code in this repo is provided **as-is**, may contain mistakes, and comes with no warranty.
+- 🔍 Verify any data before relying on it for anything that matters.
+- ✉️ Operators who want their endpoint removed: open an issue or PR.
+
 ## 📜 License
 
 MIT — see [LICENSE](LICENSE).
