@@ -1,0 +1,36 @@
+{
+  "id": "ch-neuchatel-parkingsne",
+  "operator": "Parkings de Neuchâtel (operator-run aggregator)",
+  "country": "CH",
+  "canton": "NE",
+  "city": "Neuchâtel",
+  "website": "https://parkingsdeneuchatel.ch",
+  "endpoints": [
+    {
+      "primary": true,
+      "url": "https://parkingsdeneuchatel.ch/json/data.json",
+      "method": "GET",
+      "format": "json",
+      "auth": "none",
+      "documented": false,
+      "discovered_on": "https://parkingsdeneuchatel.ch",
+      "refresh_seconds": 30,
+      "response_shape": "Flat object: { port: <int>, pury: <int>, seyon: <int>, gare1: <int>, gare2: <int>, gare: <int> } — each value is free spaces for that parking",
+      "fields": {
+        "port": "free spaces at Parking du Port",
+        "pury": "free spaces at Parking Pury",
+        "seyon": "free spaces at Parking Place du Seyon",
+        "gare1": "free spaces at Parking de la Gare, level 1",
+        "gare2": "free spaces at Parking de la Gare, level 2",
+        "gare": "free spaces at Parking de la Gare (gare1 + gare2 combined; convenience field)"
+      },
+      "notes": "Endpoint returns ONLY free spaces — capacities are not in the JSON, they are in the page markup. Polled by the website every ~30 seconds."
+    }
+  ],
+  "parkings": [
+    {"id": "port", "name": "Parking du Port", "capacity": 428, "lot_type": "Parkhaus"},
+    {"id": "pury", "name": "Parking Pury", "capacity": 421, "lot_type": "Parkhaus"},
+    {"id": "seyon", "name": "Parking Place du Seyon", "capacity": 377, "lot_type": "Parkhaus"},
+    {"id": "gare", "name": "Parking de la Gare", "capacity": 331, "lot_type": "Parkhaus", "notes": "Feed splits this parking into two levels: \"gare1\" (free spaces level 1) and \"gare2\" (free spaces level 2). The \"gare\" field is their sum."}
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "ch-winterthur-stadtplan",
+  "operator": "Stadt Winterthur — Parkleitsystem (published as Open Data)",
+  "country": "CH",
+  "canton": "ZH",
+  "city": "Winterthur",
+  "website": "https://stadtplan.winterthur.ch",
+  "license": "opendata.swiss terms_open",
+  "endpoints": [
+    {
+      "primary": true,
+      "url": "https://stadtplan.winterthur.ch/wms/Parkleitsystem?SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=ParkleitsystemLayer&SRSNAME=EPSG:4326",
+      "method": "GET",
+      "format": "wfs-gml-xml",
+      "auth": "none",
+      "documented": true,
+      "documentation_url": "https://opendata.swiss/en/dataset/parkleitsystem1",
+      "capabilities_url": "https://stadtplan.winterthur.ch/wms/Parkleitsystem?Service=WFS&Request=GetCapabilities",
+      "discovered_on": "https://opendata.swiss/en/dataset/parkleitsystem1",
+      "response_shape": "<wfs:FeatureCollection> with <ms:ParkleitsystemLayer> feature elements; each feature has child elements Name, BelegtePlaetze, FreiePlaetze, Kapazitaet, LetzteAktualisierung, Longitude, Latitude, UID",
+      "fields": {
+        "Name": "parking name",
+        "BelegtePlaetze": "occupied spaces",
+        "FreiePlaetze": "free spaces",
+        "Kapazitaet": "total capacity",
+        "LetzteAktualisierung": "last update timestamp (YYYY-MM-DD HH:MM:SS, Europe/Zurich)",
+        "Longitude": "WGS84 longitude",
+        "Latitude": "WGS84 latitude",
+        "UID": "stable UUID identifier"
+      },
+      "notes": "Standard WFS endpoint — request other formats (e.g. GeoJSON if supported) via OUTPUTFORMAT. Capabilities document lists the full schema."
+    }
+  ],
+  "parkings": [
+    {"id": "archhoefe", "name": "Archhöfe", "capacity": 191, "coords": {"lat": 47.498110, "lng": 8.724753}, "external_uid": "6fcb1b6e-3289-47ca-afc8-bde918b2cce8"},
+    {"id": "bahnhof", "name": "Bahnhof", "capacity": 453, "coords": {"lat": 47.501066, "lng": 8.723542}, "external_uid": "1f34eff4-a09e-48dc-8c74-75526ed930aa"},
+    {"id": "eulachpassage", "name": "Eulachpassage", "capacity": 280, "coords": {"lat": 47.497468, "lng": 8.726187}, "external_uid": "b9bc8782-ee72-401d-a09e-b3783fa60150"},
+    {"id": "kesselhaus", "name": "Kesselhaus", "capacity": 101, "coords": {"lat": 47.497590, "lng": 8.720065}, "external_uid": "cc65d60b-26cd-44a5-8f68-4a5f08c79b60"},
+    {"id": "rosenberg", "name": "Rosenberg", "capacity": 300, "coords": {"lat": 47.519084, "lng": 8.719459}, "external_uid": "9723f910-a07b-445c-841a-396b6107facc"},
+    {"id": "schuetzenwiese", "name": "Schützenwiese", "capacity": 141, "coords": {"lat": 47.502056, "lng": 8.716818}, "external_uid": "2dc2a1da-d1c0-46ce-9ca8-d6c0e3caf06a"},
+    {"id": "stadtgarten", "name": "Stadtgarten", "capacity": 417, "coords": {"lat": 47.501183, "lng": 8.726553}, "external_uid": "3c71237d-37e1-4999-998a-8b3a84454be1"},
+    {"id": "technikum", "name": "Technikum", "capacity": 180, "coords": {"lat": 47.497627, "lng": 8.729992}, "external_uid": "f91572c4-717b-443d-9d82-d571be31ae8c"},
+    {"id": "teuchelweiher", "name": "Teuchelweiher", "capacity": 300, "coords": {"lat": 47.496464, "lng": 8.732922}, "external_uid": "80381244-02e5-4f08-80c5-79fe825de699"},
+    {"id": "theater", "name": "Theater", "capacity": 100, "coords": {"lat": 47.501572, "lng": 8.728022}, "external_uid": "c6099445-1952-420a-bc3c-d958c85d0ff0"},
+    {"id": "winterthur", "name": "Winterthur", "capacity": 154, "coords": {"lat": 47.501509, "lng": 8.733662}, "external_uid": "deaf9e37-6fc5-421f-9b1d-e72d21a0dcb8"},
+    {"id": "lokwerk", "name": "Lokwerk", "capacity": 116, "coords": {"lat": 47.494965, "lng": 8.713831}, "external_uid": "781f4929-2482-448a-99a8-40bd63f1e5b9"},
+    {"id": "neuwiesen", "name": "Neuwiesen", "capacity": 377, "coords": {"lat": 47.499273, "lng": 8.720335}, "external_uid": "5fa44e5e-2763-49a6-afa8-4e98dfb3a0f5"}
+  ]
+}

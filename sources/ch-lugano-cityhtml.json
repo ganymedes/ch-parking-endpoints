@@ -1,0 +1,30 @@
+{
+  "id": "ch-lugano-cityhtml",
+  "operator": "Città di Lugano (HTML fragment endpoint used by the city's mobility page)",
+  "country": "CH",
+  "canton": "TI",
+  "city": "Lugano",
+  "website": "https://www.lugano.ch/vivere-lugano/muoversi-lugano/posteggi/",
+  "endpoints": [
+    {
+      "primary": true,
+      "url": "https://www.lugano.ch/vivere-lugano/muoversi-lugano/posteggi/content/0.html?ajax=true&ajaxAction=map",
+      "method": "GET",
+      "format": "html",
+      "auth": "none",
+      "documented": false,
+      "discovered_on": "https://www.lugano.ch/vivere-lugano/muoversi-lugano/posteggi/",
+      "response_shape": "HTML fragment — repeating <h5> headings with parking name and zone, followed by address text and <dl> with <dt>\"Posteggi totali\"/<dt>\"Posteggi liberi\" pairs.",
+      "notes": "No clean JSON. Consumers must parse HTML. A separate fragment at ajaxAction=stat returns aggregate free counts."
+    }
+  ],
+  "parkings": [
+    {"id": "balestra", "name": "Balestra", "address": "Via G.B. Pioda, 6900 Lugano", "capacity": 426, "lot_type": "Parkhaus", "zone": "Centro"},
+    {"id": "bettydo", "name": "Bettydo", "address": "Via Cantonale, 6900 Lugano", "capacity": 96, "lot_type": "Parkhaus", "zone": "Centro"},
+    {"id": "campo-marzio", "name": "Campo Marzio", "address": "Via Pietro Capelli, 6900 Lugano", "capacity": 161, "lot_type": "Parkplatz", "zone": "Centro est"},
+    {"id": "lac", "name": "LAC", "address": "Riva Vincenzo Vela, 6900 Lugano", "capacity": 232, "lot_type": "Parkhaus", "zone": "Centro sud"},
+    {"id": "motta", "name": "Motta", "address": "Via Giuseppe Motta, 6900 Lugano", "capacity": 165, "lot_type": "Parkhaus", "zone": "Centro"},
+    {"id": "piazza-castello", "name": "Piazza Castello", "address": "Viale Carlo Cattaneo, 6900 Lugano", "capacity": 242, "lot_type": "Parkhaus", "zone": "Centro est"},
+    {"id": "resega", "name": "Resega", "address": "Via Sonvico, 6900 Lugano", "capacity": 400, "lot_type": "Parkplatz", "zone": "Cornaredo"}
+  ]
+}

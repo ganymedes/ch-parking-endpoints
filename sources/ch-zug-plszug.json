@@ -1,0 +1,56 @@
+{
+  "id": "ch-zug-plszug",
+  "operator": "Parkleitsystem Zug (city of Zug parking aggregator)",
+  "country": "CH",
+  "canton": "ZG",
+  "city": "Zug",
+  "website": "https://www.pls-zug.ch",
+  "endpoints": [
+    {
+      "primary": true,
+      "url": "https://www.pls-zug.ch/?json=true",
+      "method": "GET",
+      "format": "json",
+      "auth": "none",
+      "documented": false,
+      "discovered_on": "https://www.pls-zug.ch",
+      "response_shape": "Array of parking objects: [{ id, name, address, free, state, plz, city, latitude, longitude, prices, payment, opening_hours, additional, logo, last_modified }]",
+      "fields": {
+        "id": "numeric parking ID (e.g. 2176)",
+        "name": "parking name",
+        "address": "street address",
+        "free": "free spaces (may be negative for over-subscribed parkings)",
+        "state": "\"Offen\", \"Geschlossen\", \"Stoerung\"",
+        "plz": "postal code",
+        "city": "city",
+        "latitude": "WGS84 latitude",
+        "longitude": "WGS84 longitude",
+        "prices": "array of hourly rates",
+        "payment": "payment methods",
+        "opening_hours": "human-readable string",
+        "last_modified": "Unix epoch seconds"
+      },
+      "notes": "Single-parking detail endpoint also available at https://www.pls-zug.ch/?json=true&id={id}. Verified for Zug city; do not assume coverage of Baar or other ZG municipalities."
+    }
+  ],
+  "parkings": [
+    {"id": "2176", "name": "Altstadt Casino", "address": "Zugerbergstrasse, 6300 Zug", "lot_type": "Parkhaus", "coords": {"lat": 47.164404, "lng": 8.515686}},
+    {"id": "2177", "name": "An der Aa", "address": "Aabachstrasse 1, 6300 Zug", "lot_type": "Parkhaus", "coords": {"lat": 47.173593, "lng": 8.510694}},
+    {"id": "2178", "name": "Arena", "address": "General-Guisan-Strasse 4, 6300 Zug", "lot_type": "Parkhaus", "coords": {"lat": 47.176163, "lng": 8.506675}},
+    {"id": "2179", "name": "Athene", "address": "Mänibachstrasse 5, 6300 Zug", "lot_type": "Parkhaus", "coords": {"lat": 47.160935, "lng": 8.513921}},
+    {"id": "2180", "name": "Bundesplatz", "address": "Alpenstrasse, 6300 Zug", "lot_type": "Parkhaus", "coords": {"lat": 47.171855, "lng": 8.514522}},
+    {"id": "2181", "name": "Coop City", "address": "Bundesplatz 11-17, 6300 Zug", "lot_type": "Parkhaus", "coords": {"lat": 47.171618, "lng": 8.514254}},
+    {"id": "2182", "name": "Foyer", "address": "Gubelstrasse 30, 6300 Zug", "lot_type": "Parkhaus", "coords": {"lat": 47.175807, "lng": 8.511766}, "notes": "Special opening hours: 18:00–06:00 weekdays, 24h weekends."},
+    {"id": "2183", "name": "Frauensteinmatt", "address": "Frauensteinmatt (Hofstrasse), 6300 Zug", "lot_type": "Parkhaus", "coords": {"lat": 47.163221, "lng": 8.515154}},
+    {"id": "2185", "name": "GIBZ", "address": "Baarerstrasse 100, 6300 Zug", "lot_type": "Parkhaus", "coords": {"lat": 47.17802, "lng": 8.520049}, "notes": "Mon–Fri 06:00–24:00, Sat 06:00–17:00, closed Sun."},
+    {"id": "2186", "name": "Hafen Ost", "address": "Hafenweg, 6300 Zug", "lot_type": "Parkhaus", "coords": {"lat": 47.17338, "lng": 8.505962}},
+    {"id": "2187", "name": "Hafen West", "address": "Hafenweg, 6300 Zug", "lot_type": "Parkhaus", "coords": {"lat": 47.173393, "lng": 8.505621}},
+    {"id": "2188", "name": "Metalli/Parkhotel", "address": "Industriestrasse 15b, 6300 Zug", "lot_type": "Parkhaus", "coords": {"lat": 47.172749, "lng": 8.518472}, "notes": "Opens 06:00–01:00."},
+    {"id": "2189", "name": "Neustadtplatz", "address": "Bundesstrasse 4, 6300 Zug", "lot_type": "Parkhaus", "coords": {"lat": 47.172603, "lng": 8.512816}},
+    {"id": "2190", "name": "Postplatz", "address": "Poststrasse 4a, 6300 Zug", "lot_type": "Parkhaus", "coords": {"lat": 47.168303, "lng": 8.516453}},
+    {"id": "2191", "name": "Siemens", "address": "Dammstrasse 20/22, 6300 Zug", "lot_type": "Parkhaus", "coords": {"lat": 47.177208, "lng": 8.514822}},
+    {"id": "2192", "name": "Stadion P1", "address": "Allmendstrasse, 6300 Zug", "lot_type": "Parkplatz", "coords": {"lat": 47.177633, "lng": 8.507302}},
+    {"id": "2193", "name": "Stadion P2", "address": "Feldstrasse, 6300 Zug", "lot_type": "Parkplatz", "coords": {"lat": 47.181723, "lng": 8.508775}},
+    {"id": "2194", "name": "Vorstadt", "address": "Schmidgasse, 6300 Zug", "lot_type": "Parkhaus", "coords": {"lat": 47.16909, "lng": 8.51498}}
+  ]
+}

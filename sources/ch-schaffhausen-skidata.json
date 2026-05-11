@@ -1,0 +1,36 @@
+{
+  "id": "ch-schaffhausen-skidata",
+  "operator": "Parkhaus Schaffhausen (SKIDATA live endpoint)",
+  "country": "CH",
+  "canton": "SH",
+  "city": "Schaffhausen",
+  "website": "https://parkhaus-sh.ch",
+  "endpoints": [
+    {
+      "primary": true,
+      "url": "https://skidata.parkhaus-sh.ch/live",
+      "method": "GET",
+      "format": "json",
+      "auth": "none",
+      "documented": false,
+      "cors": "yes",
+      "discovered_on": "https://parkhaus-sh.ch",
+      "refresh_seconds": 5,
+      "response_shape": "Object keyed by parking slug: { <slug>: { name, kurzparker: { kapazitaet, belegt, frei, belegtProzent, freiProzent } } }",
+      "fields": {
+        "name": "parking name",
+        "kurzparker.kapazitaet": "short-term capacity",
+        "kurzparker.belegt": "occupied short-term spaces",
+        "kurzparker.frei": "free short-term spaces",
+        "kurzparker.belegtProzent": "occupancy percent (integer)",
+        "kurzparker.freiProzent": "availability percent (integer)"
+      },
+      "notes": "Backed by a SKIDATA system. Refresh interval is roughly 5 seconds."
+    }
+  ],
+  "parkings": [
+    {"id": "herrenacker", "name": "Parkhaus Herrenacker", "capacity": 294, "lot_type": "Parkhaus"},
+    {"id": "schifflaende", "name": "Parkhaus Schifflände", "capacity": 54, "lot_type": "Parkhaus"},
+    {"id": "bahnhof", "name": "Parkhaus Bahnhof", "capacity": 480, "lot_type": "Parkhaus"}
+  ]
+}

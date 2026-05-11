@@ -2,7 +2,7 @@
 
 > A public catalog of parking availability endpoints, feeds, and data sources discovered on public Swiss websites.
 
-🇨🇭 **Scope:** Switzerland  ·  📦 **Sources:** 4  ·  🅿️ **Parkings:** 66  ·  🔌 **Endpoints:** 7
+🇨🇭 **Scope:** Switzerland  ·  📦 **Sources:** 14  ·  🅿️ **Parkings:** 186  ·  🔌 **Endpoints:** 18
 
 ---
 
@@ -21,6 +21,16 @@ Each source describes **one operator** and lives in [`sources/`](sources/) as a 
 | [`ch-bern-parkingbern.json`](sources/ch-bern-parkingbern.json) | Parking Bern (aggregator) | 📍 Bern (BE) | 10 | 1 (undocumented XML) |
 | [`ch-luzern-plsluzern.json`](sources/ch-luzern-plsluzern.json) | PLS Parkleitsystem Luzern AG (aggregator) | 📍 Luzern (LU) | 16 | 1 (undocumented JSON, CORS-enabled) |
 | [`ch-zuerich-plszh.json`](sources/ch-zuerich-plszh.json) | Stadt Zürich Parkleitsystem (official) | 📍 Zürich (ZH) | 36 | 4 (1 CC0 RSS + 3 secondary) |
+| [`ch-geneve-tergeoservices.json`](sources/ch-geneve-tergeoservices.json) | Etat de Genève Infomobilité (regional) | 📍 Genève + region (GE) | 28 | 1 (Esri FeatureServer JSON) |
+| [`ch-basel-databs.json`](sources/ch-basel-databs.json) | Kanton Basel-Stadt — PLS Basel (official) | 📍 Basel (BS) | 16 | 1 (CC0 JSON, CORS-enabled) |
+| [`ch-winterthur-stadtplan.json`](sources/ch-winterthur-stadtplan.json) | Stadt Winterthur PLS (official) | 📍 Winterthur (ZH) | 13 | 1 (open WFS/GML) |
+| [`ch-stgallen-datenstgallen.json`](sources/ch-stgallen-datenstgallen.json) | Stadt St. Gallen PLS (official) | 📍 St. Gallen (SG) | 16 | 2 (OpenDataSoft + internal) |
+| [`ch-lugano-cityhtml.json`](sources/ch-lugano-cityhtml.json) | Città di Lugano (city site) | 📍 Lugano (TI) | 7 | 1 (HTML fragment) |
+| [`ch-neuchatel-parkingsne.json`](sources/ch-neuchatel-parkingsne.json) | Parkings de Neuchâtel | 📍 Neuchâtel (NE) | 4 | 1 (JSON, free-spaces only) |
+| [`ch-schaffhausen-skidata.json`](sources/ch-schaffhausen-skidata.json) | Parkhaus Schaffhausen (SKIDATA) | 📍 Schaffhausen (SH) | 3 | 1 (JSON, CORS-enabled) |
+| [`ch-zug-plszug.json`](sources/ch-zug-plszug.json) | Parkleitsystem Zug | 📍 Zug (ZG) | 18 | 1 (JSON) |
+| [`ch-frauenfeld-datatg.json`](sources/ch-frauenfeld-datatg.json) | Smart Parking Frauenfeld (Kanton TG) | 📍 Frauenfeld (TG) | 7 | 1 (CC0 JSON, time-series) |
+| [`ch-montreux-parkingsriviera.json`](sources/ch-montreux-parkingsriviera.json) | Parkings Riviera (regional operator) | 📍 Montreux (VD) | 8 | 1 (HTML) |
 
 ## 🧪 Try it
 

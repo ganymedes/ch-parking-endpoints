@@ -1,0 +1,32 @@
+{
+  "id": "ch-montreux-parkingsriviera",
+  "operator": "Parkings Riviera (regional operator, Vevey/Montreux/Riviera)",
+  "country": "CH",
+  "canton": "VD",
+  "city": "Montreux",
+  "website": "https://www.parkings-riviera.ch",
+  "endpoints": [
+    {
+      "primary": true,
+      "url": "https://www.parkings-riviera.ch/?commune=Montreux",
+      "method": "GET",
+      "format": "html",
+      "auth": "none",
+      "documented": false,
+      "discovered_on": "https://www.parkings-riviera.ch",
+      "refresh_seconds": 25,
+      "response_shape": "HTML page — live free counts and capacity rendered inline in the pattern \"<b>{free}</b> / {total}\" per parking. No data-* attributes or embedded JSON.",
+      "notes": "HTML-only data source — consumers must parse HTML. Capacity, max height shown next to each parking; addresses and coordinates are not in the page markup. The same site uses ?commune=Vevey and other communes for the rest of the Riviera region."
+    }
+  ],
+  "parkings": [
+    {"id": "marche-forum", "name": "Marché / Forum", "capacity": 511, "max_height_m": 1.95, "lot_type": "Parkhaus"},
+    {"id": "gare", "name": "Gare", "capacity": 275, "max_height_m": 2.00, "lot_type": "Parkhaus"},
+    {"id": "la-paix", "name": "La Paix", "capacity": 216, "max_height_m": 2.05, "lot_type": "Parkhaus"},
+    {"id": "cite-centre", "name": "Cité-Centre", "capacity": 77, "max_height_m": 1.90, "lot_type": "Parkhaus"},
+    {"id": "donner", "name": "Donner", "capacity": 62, "max_height_m": 2.05, "lot_type": "Parkhaus"},
+    {"id": "chailly-pr", "name": "Chailly P+R", "capacity": 149, "lot_type": "Parkplatz", "notes": "Park & Ride facility."},
+    {"id": "clarens-centre", "name": "Clarens Centre", "capacity": null, "lot_type": "Parkhaus", "notes": "Page shows \"NC\" — currently no live data."},
+    {"id": "casino", "name": "Casino", "capacity": null, "lot_type": "Parkhaus", "notes": "Page shows no capacity / no live data at the time of snapshot."}
+  ]
+}

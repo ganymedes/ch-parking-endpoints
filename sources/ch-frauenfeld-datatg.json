@@ -1,0 +1,45 @@
+{
+  "id": "ch-frauenfeld-datatg",
+  "operator": "Smart Parking Frauenfeld (Kanton Thurgau Open Data)",
+  "country": "CH",
+  "canton": "TG",
+  "city": "Frauenfeld",
+  "website": "https://data.tg.ch/explore/dataset/frauenfeld-1/",
+  "license": "CC0",
+  "endpoints": [
+    {
+      "primary": true,
+      "url": "https://data.tg.ch/api/explore/v2.1/catalog/datasets/frauenfeld-1/records?order_by=timestamp%20desc&limit=100&timezone=Europe%2FZurich",
+      "method": "GET",
+      "format": "json",
+      "auth": "none",
+      "documented": true,
+      "documentation_url": "https://data.tg.ch/explore/dataset/frauenfeld-1/",
+      "license": "CC0",
+      "cors": "yes",
+      "discovered_on": "https://data.tg.ch/explore/dataset/frauenfeld-1/",
+      "refresh_seconds": 300,
+      "response_shape": "OpenDataSoft v2.1: { total_count, results: [{ name, visualplan_id, available_spots, occupied_spots, deactivated_spots, total_spots, timestamp, koordinaten: { lon, lat } }] } — time-series, latest first",
+      "fields": {
+        "name": "parking / lot name",
+        "visualplan_id": "stable internal ID",
+        "available_spots": "free spaces",
+        "occupied_spots": "occupied spaces",
+        "deactivated_spots": "spaces taken out of service",
+        "total_spots": "total spaces",
+        "timestamp": "ISO 8601 timestamp of the snapshot",
+        "koordinaten": "{ lon, lat } WGS84"
+      },
+      "notes": "Time-series dataset — each record is a snapshot of one parking at one moment. Use order_by=timestamp desc + filter / dedupe by visualplan_id to get the latest reading per parking. Historical monthly CSV archives are linked from the dataset page."
+    }
+  ],
+  "parkings": [
+    {"id": "1", "name": "Oberes Mätteli", "capacity": 185, "lot_type": "Parkplatz", "coords": {"lat": 47.5594, "lng": 8.8996}},
+    {"id": "2", "name": "Unteres Mätteli", "capacity": 98, "lot_type": "Parkplatz", "coords": {"lat": 47.5603, "lng": 8.8987}},
+    {"id": "3", "name": "Marktplatz 10-Std", "capacity": 114, "lot_type": "Parkplatz", "coords": {"lat": 47.5539, "lng": 8.8998}, "notes": "10-hour parking zone at Marktplatz."},
+    {"id": "4", "name": "Freie-Strasse, Bankplatz", "capacity": 30, "lot_type": "Parkplatz", "coords": {"lat": 47.5569, "lng": 8.8986}},
+    {"id": "5", "name": "Zürcherstrasse", "capacity": 9, "lot_type": "Parkplatz", "coords": {"lat": 47.5566, "lng": 8.8981}},
+    {"id": "6", "name": "Marktplatz 2-Std", "capacity": 62, "lot_type": "Parkplatz", "coords": {"lat": 47.5546, "lng": 8.8993}, "notes": "2-hour parking zone at Marktplatz (separate from the 10-hour zone)."},
+    {"id": "7", "name": "Parkhaus Altstadt", "capacity": 66, "lot_type": "Parkhaus", "coords": {"lat": 47.5564, "lng": 8.8999}}
+  ]
+}

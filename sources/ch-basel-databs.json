@@ -1,0 +1,56 @@
+{
+  "id": "ch-basel-databs",
+  "operator": "Kanton Basel-Stadt — Parkleitsystem Basel (published as Open Data)",
+  "country": "CH",
+  "canton": "BS",
+  "city": "Basel",
+  "website": "https://www.parkleitsystem-basel.ch",
+  "license": "CC0",
+  "endpoints": [
+    {
+      "primary": true,
+      "url": "https://data.bs.ch/api/explore/v2.1/catalog/datasets/100088/records?select=published,last_downloaded,geo_point_2d,name,total,free,status,id,address,lot_type,link&limit=100&lang=de&timezone=Europe/Zurich",
+      "method": "GET",
+      "format": "json",
+      "auth": "none",
+      "documented": true,
+      "documentation_url": "https://data.bs.ch/explore/dataset/100088/",
+      "license": "CC0",
+      "cors": "yes",
+      "discovered_on": "https://data.bs.ch/explore/dataset/100088/",
+      "response_shape": "OpenDataSoft v2.1: { total_count, results: [{ id, name, address, total, free, status, lot_type, link, geo_point_2d: { lon, lat }, published, last_downloaded }] }",
+      "fields": {
+        "id": "stable parking ID, e.g. \"baselparkhauscity\"",
+        "name": "parking name",
+        "address": "street address",
+        "total": "total capacity (integer, may be null)",
+        "free": "free spaces (integer)",
+        "status": "open/closed status string (e.g. \"offen\")",
+        "lot_type": "\"Parkhaus\" or \"Parkplatz\"",
+        "link": "detail page URL",
+        "geo_point_2d": "{ lon, lat } in WGS84",
+        "published": "feed publication timestamp",
+        "last_downloaded": "when ParkenDD last polled the upstream"
+      },
+      "notes": "Official Basel-Stadt Open Data dataset (CC0). Also mirrored by ParkenDD at https://api.parkendd.de/Basel."
+    }
+  ],
+  "parkings": [
+    {"id": "city", "name": "Parkhaus City", "address": "Schanzenstrasse 48, Basel", "capacity": 1114, "lot_type": "Parkhaus", "coords": {"lat": 47.561101, "lng": 7.5824076}, "info_url": "https://www.parkleitsystem-basel.ch/parkhaus/city"},
+    {"id": "europe", "name": "Parkhaus Europe", "address": "Hammerstrasse 68, Basel", "capacity": 120, "lot_type": "Parkhaus", "coords": {"lat": 47.5630411, "lng": 7.5967098}, "info_url": "https://www.parkleitsystem-basel.ch/parkhaus/europe"},
+    {"id": "rebgasse", "name": "Parkhaus Rebgasse", "address": "Rebgasse 20, Basel", "capacity": 250, "lot_type": "Parkhaus", "coords": {"lat": 47.5607142, "lng": 7.594263}, "info_url": "https://www.parkleitsystem-basel.ch/parkhaus/rebgasse"},
+    {"id": "aeschen", "name": "Parkhaus Aeschen", "address": "Aeschengraben 9, Basel", "capacity": 95, "lot_type": "Parkhaus", "coords": {"lat": 47.5504299, "lng": 7.5943046}, "info_url": "https://www.parkleitsystem-basel.ch/parkhaus/aeschen"},
+    {"id": "claramatte", "name": "Parkhaus Claramatte", "address": "Klingentalstrasse 25, Basel", "capacity": 120, "lot_type": "Parkhaus", "coords": {"lat": 47.5639644, "lng": 7.5946604}, "info_url": "https://www.parkleitsystem-basel.ch/parkhaus/claramatte"},
+    {"id": "centralbahn", "name": "Parkhaus Centralbahn", "address": "Gartenstrasse 150, Basel", "capacity": 287, "lot_type": "Parkhaus", "coords": {"lat": 47.547299, "lng": 7.5922975}, "info_url": "https://www.parkleitsystem-basel.ch/parkhaus/centralbahn"},
+    {"id": "bahnhofsued", "name": "Parkhaus Bahnhof Süd", "address": "Güterstrasse 115, Basel", "capacity": 100, "lot_type": "Parkhaus", "coords": {"lat": 47.5458851, "lng": 7.5884556}, "info_url": "https://www.parkleitsystem-basel.ch/parkhaus/bahnhofsued"},
+    {"id": "elisabethen", "name": "Parkhaus Elisabethen", "address": "Steinentorberg 5, Basel", "capacity": 840, "lot_type": "Parkhaus", "coords": {"lat": 47.5506254, "lng": 7.5874932}, "info_url": "https://www.parkleitsystem-basel.ch/parkhaus/elisabethen"},
+    {"id": "steinen", "name": "Parkhaus Steinen", "address": "Steinenschanze 5, Basel", "capacity": 526, "lot_type": "Parkhaus", "coords": {"lat": 47.5524554, "lng": 7.5858936}, "info_url": "https://www.parkleitsystem-basel.ch/parkhaus/steinen"},
+    {"id": "storchen", "name": "Parkhaus Storchen", "address": "Fischmarkt 10, Basel", "capacity": 142, "lot_type": "Parkhaus", "coords": {"lat": 47.5592347, "lng": 7.58658}, "info_url": "https://www.parkleitsystem-basel.ch/parkhaus/storchen"},
+    {"id": "badbahnhof", "name": "Parkhaus Bad. Bahnhof", "address": "Schwarzwaldstrasse 160, Basel", "capacity": 750, "lot_type": "Parkhaus", "coords": {"lat": 47.5651794, "lng": 7.6089067}, "info_url": "https://www.parkleitsystem-basel.ch/parkhaus/badbahnhof"},
+    {"id": "messe", "name": "Parkhaus Messe", "address": "Riehenstrasse 101, Basel", "capacity": 727, "lot_type": "Parkhaus", "coords": {"lat": 47.563241, "lng": 7.602175}, "info_url": "https://www.parkleitsystem-basel.ch/parkhaus/messe"},
+    {"id": "clarahuus", "name": "Parkhaus Clarahuus", "address": "Webergasse 34, Basel", "capacity": 52, "lot_type": "Parkhaus", "coords": {"lat": 47.5622725, "lng": 7.5917937}, "info_url": "https://www.parkleitsystem-basel.ch/parkhaus/clarahuus"},
+    {"id": "postbasel", "name": "Parkhaus Post Basel", "address": "Gartenstrasse 143, Basel", "capacity": null, "lot_type": "Parkhaus", "coords": {"lat": 47.5468617, "lng": 7.5929374}, "info_url": "https://www.parkleitsystem-basel.ch/parkhaus/postbasel", "notes": "Feed reports total=null."},
+    {"id": "anfos", "name": "Parkhaus Anfos", "address": "Henric Petri-Strasse 21, Basel", "capacity": 165, "lot_type": "Parkhaus", "coords": {"lat": 47.5515968, "lng": 7.593512}, "info_url": "https://www.parkleitsystem-basel.ch/parkhaus/anfos"},
+    {"id": "kunstmuseum", "name": "Parkhaus Kunstmuseum", "address": "St. Alban-Graben 3, Basel", "capacity": 350, "lot_type": "Parkhaus", "coords": {"lat": 47.5545146, "lng": 7.5927014}, "info_url": "https://www.parkleitsystem-basel.ch/parkhaus/kunstmuseum"}
+  ]
+}

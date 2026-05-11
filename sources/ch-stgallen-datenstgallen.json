@@ -1,0 +1,63 @@
+{
+  "id": "ch-stgallen-datenstgallen",
+  "operator": "Stadt St. Gallen — Parkleitsystem (published as Open Data)",
+  "country": "CH",
+  "canton": "SG",
+  "city": "St. Gallen",
+  "website": "https://www.pls-sg.ch",
+  "license": "opendata.swiss terms_by_ask",
+  "endpoints": [
+    {
+      "primary": true,
+      "url": "https://daten.stadt.sg.ch/api/explore/v2.1/catalog/datasets/freie-parkplatze-in-der-stadt-stgallen-pls/records?limit=100",
+      "method": "GET",
+      "format": "json",
+      "auth": "none",
+      "documented": true,
+      "documentation_url": "https://daten.stadt.sg.ch/explore/dataset/freie-parkplatze-in-der-stadt-stgallen-pls/",
+      "cors": "yes",
+      "discovered_on": "https://daten.stadt.sg.ch/explore/dataset/freie-parkplatze-in-der-stadt-stgallen-pls/",
+      "response_shape": "OpenDataSoft v2.1: { total_count, results: [{ phid, phname, phstate, shortmax, shortfree, shortoccupied, belegung_prozent, standort: { lon, lat }, zeitpunkt }] }",
+      "fields": {
+        "phid": "parking ID, e.g. \"P22\"",
+        "phname": "parking name",
+        "phstate": "state, e.g. \"offen\" / \"nicht verfügbar\"",
+        "shortmax": "short-term capacity (integer)",
+        "shortfree": "free short-term spaces",
+        "shortoccupied": "occupied short-term spaces",
+        "belegung_prozent": "occupancy percentage",
+        "standort": "{ lon, lat } in WGS84",
+        "zeitpunkt": "ISO 8601 timestamp"
+      },
+      "notes": "Official OpenDataSoft endpoint. State \"nicht verfügbar\" can mean the parking is not currently reporting live data (in which case shortfree=0 even when the lot is actually open)."
+    },
+    {
+      "url": "https://www.pls-sg.ch/index.php?eID=pls_getdata",
+      "method": "GET",
+      "format": "json",
+      "auth": "none",
+      "documented": false,
+      "discovered_on": "https://www.pls-sg.ch",
+      "refresh_seconds": 60,
+      "notes": "Internal JSON used by the pls-sg.ch website; polled approximately every 60 seconds."
+    }
+  ],
+  "parkings": [
+    {"id": "P22", "name": "Rathaus", "capacity": 83, "coords": {"lat": 47.424453, "lng": 9.371221}, "lot_type": "Parkhaus"},
+    {"id": "P23", "name": "Manor", "capacity": 132, "coords": {"lat": 47.423793, "lng": 9.372705}, "lot_type": "Parkhaus"},
+    {"id": "P24", "name": "Bahnhof", "capacity": 275, "coords": {"lat": 47.422775, "lng": 9.367127}, "lot_type": "Parkhaus"},
+    {"id": "P31", "name": "Oberer Graben", "capacity": 138, "coords": {"lat": 47.422223, "lng": 9.374646}, "lot_type": "Parkhaus"},
+    {"id": "P42", "name": "Burggraben", "capacity": 337, "coords": {"lat": 47.425396, "lng": 9.379288}, "lot_type": "Parkhaus"},
+    {"id": "P52", "name": "Spelterini", "capacity": 155, "coords": {"lat": 47.429303, "lng": 9.380463}, "lot_type": "Parkhaus"},
+    {"id": "P43", "name": "Spisertor", "capacity": 35, "coords": {"lat": 47.424039, "lng": 9.379277}, "lot_type": "Parkhaus"},
+    {"id": "P54", "name": "OLMA Messen", "capacity": 90, "coords": {"lat": 47.431147, "lng": 9.383656}, "lot_type": "Parkhaus"},
+    {"id": "P21", "name": "Neumarkt", "capacity": 274, "coords": {"lat": 47.4218, "lng": 9.370902}, "lot_type": "Parkhaus"},
+    {"id": "P25", "name": "Kreuzbleiche", "capacity": null, "coords": {"lat": 47.420232, "lng": 9.362406}, "lot_type": "Parkhaus", "notes": "Feed reports shortmax=0; structural capacity not exposed in this endpoint."},
+    {"id": "P41", "name": "Unterer Graben", "capacity": null, "coords": {"lat": 47.428104, "lng": 9.375785}, "lot_type": "Parkhaus", "notes": "Feed reports shortmax=0; structural capacity not exposed in this endpoint."},
+    {"id": "P51", "name": "Stadtpark AZSG", "capacity": 88, "coords": {"lat": 47.430177, "lng": 9.384783}, "lot_type": "Parkhaus"},
+    {"id": "P32", "name": "Raiffeisen", "capacity": 96, "coords": {"lat": 47.42081, "lng": 9.372335}, "lot_type": "Parkhaus"},
+    {"id": "P33", "name": "Einstein", "capacity": 187, "coords": {"lat": 47.42177, "lng": 9.37422}, "lot_type": "Parkhaus"},
+    {"id": "P44", "name": "Brühltor", "capacity": 448, "coords": {"lat": 47.427118, "lng": 9.377966}, "lot_type": "Parkhaus"},
+    {"id": "P53", "name": "OLMA Parkplatz", "capacity": 300, "coords": {"lat": 47.430875, "lng": 9.381821}, "lot_type": "Parkplatz"}
+  ]
+}
