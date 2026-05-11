@@ -1,0 +1,36 @@
+{
+  "id": "ch-lausanne-prestoplatform",
+  "operator": "Ville de Lausanne (PrestoPark commercial platform)",
+  "country": "CH",
+  "canton": "VD",
+  "city": "Lausanne",
+  "website": "https://lausanne.prestopark.com/en-ch/intelligent-guidance",
+  "endpoints": [
+    {
+      "primary": true,
+      "url": "https://api.prestoplatform.io/v1/cities/lausanne/urban-parking-sites?applicationType=%5B%22INFORMATION_SYSTEM%22%5D",
+      "method": "GET",
+      "format": "json",
+      "auth": "none",
+      "documented": false,
+      "discovered_on": "https://lausanne.prestopark.com",
+      "response_shape": "Array of parking-zone objects: [{ id, name, location, parkingNumberOfSpaces, parkingOccupancyDetectionType, ... }]",
+      "fields": {
+        "id": "PrestoPlatform zone ID, e.g. \"A1712\"",
+        "name": "zone label",
+        "location": "geographic extent (bounding box or polygon)",
+        "parkingNumberOfSpaces": "designated space count (0 for on-street zones)",
+        "parkingOccupancyDetectionType": "\"NONE\" / sensor type — currently all NONE for Lausanne"
+      },
+      "notes": "Returns on-street parking zones rather than fixed-count lots. All entries currently report parkingOccupancyDetectionType=\"NONE\" and parkingNumberOfSpaces=0 — so this endpoint does NOT provide live availability data at this time. Listed in the catalog for discoverability."
+    }
+  ],
+  "parkings": [
+    {"id": "A1712", "name": "Zone 10760 PrestoPark", "lot_type": "Zone", "coords": {"bbox": [[46.508, 6.616], [46.512, 6.622]]}, "notes": "On-street zone, no live availability."},
+    {"id": "A1713", "name": "Zone 10761 PrestoPark", "lot_type": "Zone", "coords": {"bbox": [[46.518, 6.584], [46.538, 6.616]]}, "notes": "On-street zone, no live availability."},
+    {"id": "A1714", "name": "Zone 10762 PrestoPark", "lot_type": "Zone", "coords": {"bbox": [[46.506, 6.590], [46.572, 6.692]]}, "notes": "On-street zone, no live availability."},
+    {"id": "A1715", "name": "Zone 10870 PrestoPark", "lot_type": "Zone", "coords": {"bbox": [[46.504, 6.620], [46.526, 6.632]]}, "notes": "On-street zone, no live availability."},
+    {"id": "A1717", "name": "Zone 10873 PrestoPark", "lot_type": "Zone", "coords": {"lat": 46.508, "lng": 6.621}, "notes": "On-street zone, no live availability."},
+    {"id": "A1718", "name": "Zone 10874 PrestoPark", "lot_type": "Zone", "coords": {"bbox": [[46.516, 6.624], [46.527, 6.640]]}, "notes": "On-street zone, no live availability."}
+  ]
+}

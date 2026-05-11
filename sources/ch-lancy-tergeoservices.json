@@ -1,0 +1,9 @@
+{
+  "id": "ch-lancy-tergeoservices",
+  "operator": "Etat de Genève – Infomobilité (canton-wide, covers Lancy)",
+  "country": "CH",
+  "canton": "GE",
+  "city": "Lancy",
+  "endpoint_reference": "ch-geneve-tergeoservices",
+  "notes": "Lancy parkings are served by the canton-wide Geneva Infomobilité FeatureServer. This file is a cross-reference — see ch-geneve-tergeoservices.json for the full endpoint documentation, fields, and parkings list. Lancy-specific entries can be identified by filtering the feed by geometry (Lancy municipal boundaries)."
+}

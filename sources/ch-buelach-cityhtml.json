@@ -1,0 +1,24 @@
+{
+  "id": "ch-buelach-cityhtml",
+  "operator": "Stadt Bülach",
+  "country": "CH",
+  "canton": "ZH",
+  "city": "Bülach",
+  "website": "https://www.buelach.ch/portraet/68449",
+  "endpoints": [
+    {
+      "primary": true,
+      "url": "https://www.buelach.ch/portraet/68449",
+      "method": "GET",
+      "format": "html",
+      "auth": "none",
+      "documented": false,
+      "discovered_on": "https://www.buelach.ch",
+      "response_shape": "HTML page describing parking zones (white zone with disc max 6h, city-center metered parking) and one named parkplatz (Dreispitz). A linked PDF (\"Übersicht Parkplätze in Bülach\") contains the detailed facility list.",
+      "notes": "No live availability endpoint. No machine-readable feed. Page text describes parking rules and zones; detailed facility data is in a downloadable PDF, not exposed as data. Listed for discoverability."
+    }
+  ],
+  "parkings": [
+    {"id": "dreispitz", "name": "Parkplatz Dreispitz", "address": null, "capacity": null, "lot_type": "Parkplatz", "notes": "Only parking facility named verbatim on the page; exempt from the 2h time limit for parking-card holders."}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ch-meyrin-tergeoservices",
+  "operator": "Etat de Genève – Infomobilité (canton-wide, covers Meyrin)",
+  "country": "CH",
+  "canton": "GE",
+  "city": "Meyrin",
+  "endpoint_reference": "ch-geneve-tergeoservices",
+  "notes": "Meyrin parkings are served by the canton-wide Geneva Infomobilité FeatureServer. This file is a cross-reference — see ch-geneve-tergeoservices.json for the full endpoint documentation, fields, and parkings list. Meyrin-specific entries can be identified by filtering the feed by geometry (Meyrin municipal boundaries)."
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ch-emmen-gisgict",
+  "operator": "Gemeinde Emmen (geoportal)",
+  "country": "CH",
+  "canton": "LU",
+  "city": "Emmen",
+  "website": "https://gis.gict.ch/emmen_admin/?t=Parkplaetze_public",
+  "license": "opendata.swiss terms_by_ask",
+  "endpoints": [
+    {
+      "primary": true,
+      "url": "https://gis.gict.ch/ows/emmen_admin/WMS_Emmen_all_pub",
+      "method": "GET",
+      "format": "wms",
+      "auth": "none",
+      "documented": true,
+      "capabilities_url": "https://gis.gict.ch/ows/emmen_admin/WMS_Emmen_all_pub?service=WMS&request=GetCapabilities",
+      "discovered_on": "https://gis.gict.ch/emmen_admin",
+      "response_shape": "WMS service exposing tiled maps; relevant layers: \"Parkplätze Zonen ABC\" (with child layers Zone A/B/C), \"Mietparkplätze\" (rental), \"Behindertenparkplätze Punktsymbole\" (disabled). Supports CRS:84, EPSG:4326, EPSG:3857, EPSG:2056.",
+      "notes": "WMS provides visual map tiles via GetMap and feature info via GetFeatureInfo. NO live availability data — this is a static cadastre layer for parking infrastructure (zones, rental spots, disabled spots). No WFS schema referenced in capabilities. Useful for understanding Emmen's parking zone topology, not for real-time availability."
+    }
+  ],
+  "parkings": []
+}

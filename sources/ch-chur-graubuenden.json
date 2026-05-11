@@ -1,0 +1,22 @@
+{
+  "id": "ch-chur-graubuenden",
+  "operator": "Stadt Chur — Tourism / mobility info",
+  "country": "CH",
+  "canton": "GR",
+  "city": "Chur",
+  "website": "https://www.chur.graubuenden.ch/de/service/mobilitaet-ort/parkieren",
+  "endpoints": [
+    {
+      "primary": true,
+      "url": "https://www.chur.graubuenden.ch/de/service/mobilitaet-ort/parkieren",
+      "method": "GET",
+      "format": "html",
+      "auth": "none",
+      "documented": false,
+      "discovered_on": "https://www.chur.graubuenden.ch",
+      "response_shape": "HTML landing page. Detailed parking list lives on the sub-page /de/parkieren which links to individual parking entries with addresses, capacities, and map markers.",
+      "notes": "No live availability endpoint verified for Chur. Static directory only. Detail page at /de/parkieren contains per-parking entries with capacities and addresses but is not exposed as a machine-readable feed. Listed here for discoverability."
+    }
+  ],
+  "parkings": []
+}

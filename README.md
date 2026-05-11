@@ -2,7 +2,7 @@
 
 > A public catalog of parking availability endpoints, feeds, and data sources discovered on public Swiss websites.
 
-🇨🇭 **Scope:** Switzerland  ·  📦 **Sources:** 14  ·  🅿️ **Parkings:** 186  ·  🔌 **Endpoints:** 18
+🇨🇭 **Scope:** Switzerland  ·  📦 **Sources:** 24  ·  🅿️ **Parkings:** 237  ·  🔌 **Endpoints:** 25
 
 ---
 
@@ -31,6 +31,16 @@ Each source describes **one operator** and lives in [`sources/`](sources/) as a 
 | [`ch-zug-plszug.json`](sources/ch-zug-plszug.json) | Parkleitsystem Zug | 📍 Zug (ZG) | 18 | 1 (JSON) |
 | [`ch-frauenfeld-datatg.json`](sources/ch-frauenfeld-datatg.json) | Smart Parking Frauenfeld (Kanton TG) | 📍 Frauenfeld (TG) | 7 | 1 (CC0 JSON, time-series) |
 | [`ch-montreux-parkingsriviera.json`](sources/ch-montreux-parkingsriviera.json) | Parkings Riviera (regional operator) | 📍 Montreux (VD) | 8 | 1 (HTML) |
+| [`ch-lausanne-prestoplatform.json`](sources/ch-lausanne-prestoplatform.json) | Ville de Lausanne (PrestoPark) | 📍 Lausanne (VD) | 6 | 1 (JSON, no live availability yet) |
+| [`ch-biel-sigbielbienne.json`](sources/ch-biel-sigbielbienne.json) | Ville de Bienne / Stadt Biel | 📍 Biel/Bienne (BE) | 27 | 1 (open GeoJSON, static infrastructure) |
+| [`ch-chur-graubuenden.json`](sources/ch-chur-graubuenden.json) | Stadt Chur | 📍 Chur (GR) | 0 | 1 (HTML landing page) |
+| [`ch-vernier-tergeoservices.json`](sources/ch-vernier-tergeoservices.json) | Etat de Genève (cross-ref → Geneva) | 📍 Vernier (GE) | — | shared with Geneva |
+| [`ch-lancy-tergeoservices.json`](sources/ch-lancy-tergeoservices.json) | Etat de Genève (cross-ref → Geneva) | 📍 Lancy (GE) | — | shared with Geneva |
+| [`ch-sion-arcgission.json`](sources/ch-sion-arcgission.json) | Ville de Sion — Cadastre | 📍 Sion (VS) | 7 | 1 (Esri MapServer, static) |
+| [`ch-lachauxdefonds-parkingch.json`](sources/ch-lachauxdefonds-parkingch.json) | parking.ch (third-party directory) | 📍 La Chaux-de-Fonds (NE) | 10 | 1 (HTML, names only) |
+| [`ch-emmen-gisgict.json`](sources/ch-emmen-gisgict.json) | Gemeinde Emmen (geoportal) | 📍 Emmen (LU) | 0 | 1 (WMS, no live availability) |
+| [`ch-meyrin-tergeoservices.json`](sources/ch-meyrin-tergeoservices.json) | Etat de Genève (cross-ref → Geneva) | 📍 Meyrin (GE) | — | shared with Geneva |
+| [`ch-buelach-cityhtml.json`](sources/ch-buelach-cityhtml.json) | Stadt Bülach | 📍 Bülach (ZH) | 1 | 1 (HTML, regulations only) |
 
 ## 🧪 Try it
 
@@ -99,6 +109,22 @@ The official feed published as Open Data by the City of Zürich, [CC0-licensed](
 ```
 
 The RSS feed itself only has free spaces — capacity, addresses and coordinates come from three secondary endpoints documented in the source file (ParkenDD JSON mirror with CORS, WordPress REST metadata, and an internal `api.php`).
+
+## 🏗️ Planned / no live endpoint yet
+
+These Swiss cities have a Parkleitsystem planned or under study, but no public live or static endpoint was found at the time of cataloging:
+
+| City | Canton | Reference |
+| --- | --- | --- |
+| Bellinzona | TI | [SvizzeraEnergia program article](https://www.svizzeraenergia.ch/stories/parcheggio-smart-bellinzona/) |
+| Uster | ZH | [Stadt Uster archive 2169517](https://www.uster.ch/archiv/2169517) |
+| Dübendorf | ZH | [Erschliessungs- & Parkierungskonzept 2019 (PDF)](https://www.duebendorf.ch/_docn/2310454/20190403-BE-Dubendorf_Erschliessungs-Parkierungskonzept_OM.pdf) |
+| Yverdon-les-Bains | VD | [Council report PR25.03RA — digital parking management (2025)](https://www.yverdon-les-bains.ch/fileadmin/documents/ylb/Conseil_communal/Rapports/2025_rapports/PR25.03RA_CreditInverstissementGestionDigitaliseeParking.pdf) |
+| Dietikon | ZH | [Parkierungskonzept 2024 (PDF)](https://www.dietikon.ch/_docn/5469427/Parkierungskonzept_Dietikon.pdf) |
+| Wetzikon | ZH | [Nau.ch: Pfäffikersee-area PLS being deployed](https://www.nau.ch/ort/wetzikon-zh/parkleitsystem-am-pfaffikersee-erleichtert-parkplatzsuche-67094056) |
+| Wädenswil | ZH | [Verkehrsgutachten (PDF)](https://www.waedenswil.ch/_docn/1546000/07-Verkehrsgutachten.pdf) |
+
+Cities surveyed where nothing was found yet: Köniz, Fribourg, Kriens, Rapperswil-Jona, Bulle, Wil, Horgen, Baar.
 
 ## 🤝 Contributing
 

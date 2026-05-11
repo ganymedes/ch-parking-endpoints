@@ -1,0 +1,41 @@
+{
+  "id": "ch-sion-arcgission",
+  "operator": "Ville de Sion — Cadastre (geoportal)",
+  "country": "CH",
+  "canton": "VS",
+  "city": "Sion",
+  "website": "https://sit.ciges.ch/sion/?l=sion_parking",
+  "endpoints": [
+    {
+      "primary": true,
+      "url": "https://arcgis.sion.ch/server/rest/services/cadastre/parking/MapServer/3/query?where=1%3D1&outFields=*&returnGeometry=true&f=json",
+      "method": "GET",
+      "format": "esri-mapserver-json",
+      "auth": "none",
+      "documented": false,
+      "discovered_on": "https://sit.ciges.ch/sion/?l=sion_parking",
+      "response_shape": "Esri MapServer JSON: { features: [{ attributes: { objectid, nom, hauteur, places, informations, type, stationnement, duree }, geometry: { x, y } }], spatialReference: { wkid: 2056 } }",
+      "fields": {
+        "attributes.objectid": "feature ID",
+        "attributes.nom": "parking name",
+        "attributes.hauteur": "max vehicle height (e.g. \"2.10m\")",
+        "attributes.places": "total parking spaces",
+        "attributes.informations": "URL to PDF/info page",
+        "attributes.type": "facility type (e.g. \"Souterrain\")",
+        "attributes.stationnement": "payment type (e.g. \"Payant\")",
+        "attributes.duree": "duration limit (\"Illimité\" or hours)",
+        "geometry.x/y": "EPSG:2056 Swiss LV95 coordinates"
+      },
+      "notes": "Static cadastre layer — provides capacity and metadata but NO live free-space counts. Coordinates in Swiss LV95 (EPSG:2056)."
+    }
+  ],
+  "parkings": [
+    {"id": "18", "name": "Planta", "capacity": 552, "max_height_m": 2.10, "lot_type": "Parkhaus", "coords_lv95": [2593783.66, 1120164.39], "notes": "Underground (Souterrain), paid, unlimited duration."},
+    {"id": "1", "name": "Roches-Brunes", "capacity": 300, "max_height_m": 2.10, "lot_type": "Parkhaus", "coords_lv95": [2594593.48, 1120026.17], "notes": "Underground, paid, unlimited."},
+    {"id": "2", "name": "Scex", "capacity": 658, "max_height_m": 2.00, "lot_type": "Parkhaus", "coords_lv95": [2594209.61, 1120118.29], "notes": "Underground, paid, unlimited."},
+    {"id": "3", "name": "La Cible", "capacity": 204, "max_height_m": 2.00, "lot_type": "Parkhaus", "coords_lv95": [2594069.66, 1120492.84], "notes": "Underground, paid, unlimited."},
+    {"id": "4", "name": "St-Guérin", "capacity": 66, "max_height_m": 2.20, "lot_type": "Parkhaus", "coords_lv95": [2593097.71, 1119954.06], "notes": "Underground, paid, unlimited."},
+    {"id": "264", "name": "Parking du Nord", "capacity": 282, "max_height_m": 2.20, "lot_type": "Parkhaus", "coords_lv95": [2594051.47, 1120716.02], "notes": "Underground, paid, unlimited."},
+    {"id": "348", "name": "Cour de Gare", "capacity": 625, "max_height_m": null, "lot_type": "Parkhaus", "coords_lv95": [2594002.87, 1119644.31], "notes": "Underground, paid, unlimited."}
+  ]
+}

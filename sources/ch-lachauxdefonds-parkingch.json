@@ -1,0 +1,33 @@
+{
+  "id": "ch-lachauxdefonds-parkingch",
+  "operator": "parking.ch (third-party parking directory)",
+  "country": "CH",
+  "canton": "NE",
+  "city": "La Chaux-de-Fonds",
+  "website": "https://www.parking.ch/fr/parkings/la-chaux-de-fonds",
+  "endpoints": [
+    {
+      "primary": true,
+      "url": "https://www.parking.ch/fr/parkings/la-chaux-de-fonds",
+      "method": "GET",
+      "format": "html",
+      "auth": "none",
+      "documented": false,
+      "discovered_on": "https://www.parking.ch",
+      "response_shape": "HTML directory page listing facility names; per-facility details (address, capacity, rates, access height, disabled spaces) are on individual sub-pages.",
+      "notes": "Third-party parking directory — NOT an official municipal source. No live availability feed. Listed for discoverability; an official La Chaux-de-Fonds endpoint has not been identified."
+    }
+  ],
+  "parkings": [
+    {"id": "aeroport-eplatures", "name": "Aéroport Les Eplatures", "address": null, "capacity": null},
+    {"id": "jumbo", "name": "Jumbo", "address": null, "capacity": null},
+    {"id": "camping", "name": "La Chaux-de-Fonds: Camping", "address": null, "capacity": null},
+    {"id": "metropole-centre", "name": "Metropole Centre", "address": null, "capacity": null},
+    {"id": "p-rail", "name": "P+Rail Chaux-de-Fonds", "address": null, "capacity": null, "lot_type": "Parkplatz"},
+    {"id": "parkhaus-ronde", "name": "Parkhaus de la Ronde", "address": null, "capacity": null, "lot_type": "Parkhaus"},
+    {"id": "parkhaus-entilles-centre", "name": "Parkhaus Les Entilles Centre", "address": null, "capacity": null, "lot_type": "Parkhaus"},
+    {"id": "place-marronniers", "name": "Place des Marronniers", "address": null, "capacity": null, "lot_type": "Parkplatz"},
+    {"id": "place-marche", "name": "Place du Marché", "address": null, "capacity": null, "lot_type": "Parkplatz"},
+    {"id": "polyexpo", "name": "Polyexpo", "address": null, "capacity": null}
+  ]
+}
